@@ -4,6 +4,9 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/dduportal/esgi-gitpod
+      options: --user=root
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -15,4 +18,3 @@ jobs:
         run: npm install
       - name: Run lint
         run: npm run lint
-      
